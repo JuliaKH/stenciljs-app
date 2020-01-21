@@ -1,0 +1,27 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+import { TodoItem } from "../../models/todoItem";
+export const TodoApp = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.items = [];
+    }
+    render() {
+        const handleOnChange = (e) => this.handleOnChange(e);
+        const handleSubmit = (e) => this.handleSubmit(e);
+        return (h("div", { class: "todo-app" }, h("h1", null, "TODO LIST"), h("todo-list", { todoItems: this.items }), h("todo-list-form", { onSubmit: handleSubmit, onInputChange: handleOnChange, todoItemsLength: this.items.length })));
+    }
+    handleSubmit(e) {
+        e.preventDefault();
+        if (!this.text.length) {
+            return;
+        }
+        const newItem = new TodoItem(this.text);
+        this.text = '';
+        this.items = [...this.items, newItem];
+    }
+    handleOnChange(e) {
+        this.text = e.detail;
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:todo-app"; }
+};

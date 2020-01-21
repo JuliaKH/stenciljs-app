@@ -7,44 +7,72 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  TodoItem,
+} from './models/todoItem';
 
 export namespace Components {
-  interface AppRoot {}
-  interface MyFirstComponent {
-    'name': string;
+  interface MyApp {}
+  interface TodoApp {}
+  interface TodoList {
+    'todoItems': TodoItem[];
+  }
+  interface TodoListForm {
+    'todoItemsLength': number;
   }
 }
 
 declare global {
 
 
-  interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
-  var HTMLAppRootElement: {
-    prototype: HTMLAppRootElement;
-    new (): HTMLAppRootElement;
+  interface HTMLMyAppElement extends Components.MyApp, HTMLStencilElement {}
+  var HTMLMyAppElement: {
+    prototype: HTMLMyAppElement;
+    new (): HTMLMyAppElement;
   };
 
-  interface HTMLMyFirstComponentElement extends Components.MyFirstComponent, HTMLStencilElement {}
-  var HTMLMyFirstComponentElement: {
-    prototype: HTMLMyFirstComponentElement;
-    new (): HTMLMyFirstComponentElement;
+  interface HTMLTodoAppElement extends Components.TodoApp, HTMLStencilElement {}
+  var HTMLTodoAppElement: {
+    prototype: HTMLTodoAppElement;
+    new (): HTMLTodoAppElement;
+  };
+
+  interface HTMLTodoListElement extends Components.TodoList, HTMLStencilElement {}
+  var HTMLTodoListElement: {
+    prototype: HTMLTodoListElement;
+    new (): HTMLTodoListElement;
+  };
+
+  interface HTMLTodoListFormElement extends Components.TodoListForm, HTMLStencilElement {}
+  var HTMLTodoListFormElement: {
+    prototype: HTMLTodoListFormElement;
+    new (): HTMLTodoListFormElement;
   };
   interface HTMLElementTagNameMap {
-    'app-root': HTMLAppRootElement;
-    'my-first-component': HTMLMyFirstComponentElement;
+    'my-app': HTMLMyAppElement;
+    'todo-app': HTMLTodoAppElement;
+    'todo-list': HTMLTodoListElement;
+    'todo-list-form': HTMLTodoListFormElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface AppRoot {}
-  interface MyFirstComponent {
-    'name'?: string;
+  interface MyApp {}
+  interface TodoApp {}
+  interface TodoList {
+    'todoItems'?: TodoItem[];
+  }
+  interface TodoListForm {
+    'onInputChange'?: (event: CustomEvent<any>) => void;
+    'onSubmit'?: (event: CustomEvent<any>) => void;
+    'todoItemsLength'?: number;
   }
 
   interface IntrinsicElements {
-    'app-root': AppRoot;
-    'my-first-component': MyFirstComponent;
+    'my-app': MyApp;
+    'todo-app': TodoApp;
+    'todo-list': TodoList;
+    'todo-list-form': TodoListForm;
   }
 }
 
@@ -54,8 +82,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-      'my-first-component': LocalJSX.MyFirstComponent & JSXBase.HTMLAttributes<HTMLMyFirstComponentElement>;
+      'my-app': LocalJSX.MyApp & JSXBase.HTMLAttributes<HTMLMyAppElement>;
+      'todo-app': LocalJSX.TodoApp & JSXBase.HTMLAttributes<HTMLTodoAppElement>;
+      'todo-list': LocalJSX.TodoList & JSXBase.HTMLAttributes<HTMLTodoListElement>;
+      'todo-list-form': LocalJSX.TodoListForm & JSXBase.HTMLAttributes<HTMLTodoListFormElement>;
     }
   }
 }
