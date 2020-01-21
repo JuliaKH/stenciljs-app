@@ -1,1 +1,0 @@
-import{r,h as s}from"./p-ae1a0a05.js";const t=class{constructor(s){r(this,s)}render(){return s("my-first-component",{name:"Julia"})}},n=class{constructor(s){r(this,s)}render(){return s("p",null,"My name is ",this.name)}};export{t as app_root,n as my_first_component};

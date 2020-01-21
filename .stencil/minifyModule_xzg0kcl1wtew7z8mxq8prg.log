@@ -1,0 +1,1 @@
+import{p as t,b as o}from"./p-e8dbde84.js";t().then(t=>o([["p-jntl3lkk",[[0,"my-app"],[0,"todo-app",{items:[32],text:[32]}],[0,"todo-list",{todoItems:[16]}],[0,"todo-list-form",{todoItemsLength:[2,"todo-items-length"],value:[32]}]]]],t));

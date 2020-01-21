@@ -1,0 +1,108 @@
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+System.register(['./p-c8203692.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, h, createEvent;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                h = module.h;
+                createEvent = module.c;
+            }],
+        execute: function () {
+            var MyApp = exports('my_app', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                }
+                class_1.prototype.render = function () {
+                    return (h("div", null, h("header", null, h("h1", { class: "heading" }, "Todo List with Stencil")), h("main", null, h("todo-app", null))));
+                };
+                Object.defineProperty(class_1, "style", {
+                    get: function () { return "STYLE_TEXT_PLACEHOLDER:my-app"; },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_1;
+            }()));
+            var TodoItem = /** @class */ (function () {
+                function TodoItem(text) {
+                    this.text = text;
+                }
+                return TodoItem;
+            }());
+            var TodoApp = exports('todo_app', /** @class */ (function () {
+                function class_2(hostRef) {
+                    registerInstance(this, hostRef);
+                    this.items = [];
+                }
+                class_2.prototype.render = function () {
+                    var _this = this;
+                    var handleOnChange = function (e) { return _this.handleOnChange(e); };
+                    var handleSubmit = function (e) { return _this.handleSubmit(e); };
+                    return (h("div", { class: "todo-app" }, h("h1", null, "TODO LIST"), h("todo-list", { todoItems: this.items }), h("todo-list-form", { onSubmit: handleSubmit, onInputChange: handleOnChange, todoItemsLength: this.items.length })));
+                };
+                class_2.prototype.handleSubmit = function (e) {
+                    e.preventDefault();
+                    if (!this.text.length) {
+                        return;
+                    }
+                    var newItem = new TodoItem(this.text);
+                    this.text = '';
+                    this.items = __spreadArrays(this.items, [newItem]);
+                };
+                class_2.prototype.handleOnChange = function (e) {
+                    this.text = e.detail;
+                };
+                Object.defineProperty(class_2, "style", {
+                    get: function () { return "STYLE_TEXT_PLACEHOLDER:todo-app"; },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_2;
+            }()));
+            var TodoList = exports('todo_list', /** @class */ (function () {
+                function class_3(hostRef) {
+                    registerInstance(this, hostRef);
+                }
+                class_3.prototype.render = function () {
+                    return (h("ul", { class: "todo-list" }, this.todoItems.map(function (item) { return (h("li", null, item.text)); })));
+                };
+                return class_3;
+            }()));
+            var TodoListForm = exports('todo_list_form', /** @class */ (function () {
+                function class_4(hostRef) {
+                    registerInstance(this, hostRef);
+                    this.value = '';
+                    this.inputChange = createEvent(this, "inputChange", 7);
+                    this.submit = createEvent(this, "submit", 7);
+                }
+                class_4.prototype.handleOnChange = function (e) {
+                    this.value = e.target.value;
+                    this.inputChange.emit(this.value);
+                };
+                class_4.prototype.handleOnSubmit = function (e) {
+                    e.preventDefault();
+                    this.submit.emit(this.value);
+                    this.value = '';
+                };
+                class_4.prototype.render = function () {
+                    var _this = this;
+                    var handleOnChange = function (e) { return _this.handleOnChange(e); };
+                    var handleOnSubmit = function (e) { return _this.handleOnSubmit(e); };
+                    return (h("form", { class: "todo-list-form", onSubmit: handleOnSubmit }, h("input", { type: "text", onInput: handleOnChange, value: this.value }), h("button", null, "Add #", this.todoItemsLength + 1)));
+                };
+                Object.defineProperty(class_4, "style", {
+                    get: function () { return "STYLE_TEXT_PLACEHOLDER:todo-list-form"; },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_4;
+            }()));
+        }
+    };
+});

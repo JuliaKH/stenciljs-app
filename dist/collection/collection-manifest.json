@@ -1,7 +1,9 @@
 {
   "entries": [
-    "components\\app-root\\app-root.js",
-    "components\\my-first-component.js"
+    "components\\todo-list\\todo-list.js",
+    "components\\my-app\\my-app.js",
+    "components\\todo-app\\todo-app.js",
+    "components\\todo-list-form\\todoListForm.js"
   ],
   "compiler": {
     "name": "@stencil/core",

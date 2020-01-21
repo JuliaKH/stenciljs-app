@@ -1,10 +1,11 @@
 import { Config } from '@stencil/core';
-
+import analyze from 'rollup-plugin-analyzer'
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
+  namespace: 'myApp',
   outputTargets: [{
-    type: 'www',
-    serviceWorker: null
+    type: 'dist'
   }],
+  plugins: [analyze({summaryOnly:true})]
 };
