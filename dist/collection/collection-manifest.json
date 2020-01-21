@@ -1,0 +1,13 @@
+{
+  "entries": [
+    "components\\app-root\\app-root.js",
+    "components\\my-first-component.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.8.4",
+    "typescriptVersion": "3.7.2"
+  },
+  "collections": [],
+  "bundles": []
+}

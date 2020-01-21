@@ -1,0 +1,1 @@
+import{p as a,b as p}from"./p-ae1a0a05.js";a().then(a=>p([["p-s3vrz2yd",[[0,"app-root"],[0,"my-first-component",{name:[1]}]]]],a));

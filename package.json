@@ -1,0 +1,27 @@
+{
+  "name": "stencil-starter-project-name",
+  "private": true,
+  "version": "0.0.1",
+  "description": "stencil-starter-project-name",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watch",
+    "generate": "stencil generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliaKH/stenciljs-app.git"
+  },
+  "dependencies": {
+    "@ionic/core": "^4.11.7"
+  },
+  "devDependencies": {
+    "@stencil/core": "^1.8.4"
+  }
+}

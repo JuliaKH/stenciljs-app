@@ -1,0 +1,1 @@
+import{r as t,h as r}from"./p-ea04d229.js";const s=class{constructor(r){t(this,r)}render(){return r("my-first-component",{name:"Julia"})}static get style(){return"STYLE_TEXT_PLACEHOLDER:app-root"}},o=class{constructor(r){t(this,r)}render(){return r("p",null,"My name is ",this.name)}};export{s as app_root,o as my_first_component};

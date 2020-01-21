@@ -1,0 +1,25 @@
+import { r as registerInstance, h } from './core-25531ea3.js';
+var AppRoot = /** @class */ (function () {
+    function AppRoot(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    AppRoot.prototype.render = function () {
+        return (h("my-first-component", { name: "Julia" }));
+    };
+    Object.defineProperty(AppRoot, "style", {
+        get: function () { return "STYLE_TEXT_PLACEHOLDER:app-root"; },
+        enumerable: true,
+        configurable: true
+    });
+    return AppRoot;
+}());
+var MyComponent = /** @class */ (function () {
+    function MyComponent(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    MyComponent.prototype.render = function () {
+        return (h("p", null, "My name is ", this.name));
+    };
+    return MyComponent;
+}());
+export { AppRoot as app_root, MyComponent as my_first_component };

@@ -1,0 +1,1 @@
+System.register(["./p-f48d99c2.system.js"],(function(){"use strict";var t,e;return{setters:[function(n){t=n.p;e=n.b}],execute:function(){t().then((function(t){return e([["p-pvk1bxs0.system",[[0,"app-root"],[0,"my-first-component",{name:[1]}]]]],t)}))}}}));
