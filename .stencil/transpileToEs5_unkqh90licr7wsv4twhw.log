@@ -1,0 +1,26 @@
+System.register(['./core-d14a6cdc.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, h;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                h = module.h;
+            }],
+        execute: function () {
+            var MyApp = exports('my_app', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                }
+                class_1.prototype.render = function () {
+                    return (h("div", null, h("header", null, h("h1", { class: "heading" }, "Todo List with Stencil")), h("main", null, h("todo-app", null)), h("img", { "data-src": this.imgSrc }), ";"));
+                };
+                Object.defineProperty(class_1, "style", {
+                    get: function () { return "STYLE_TEXT_PLACEHOLDER:my-app"; },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_1;
+            }()));
+        }
+    };
+});

@@ -1,0 +1,27 @@
+System.register(['./core-23f8c16a.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, h, Host;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                h = module.h;
+                Host = module.H;
+            }],
+        execute: function () {
+            var LazyComponent = exports('lazy_component', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                }
+                class_1.prototype.render = function () {
+                    return (h(Host, null, h("slot", null)));
+                };
+                Object.defineProperty(class_1, "style", {
+                    get: function () { return "STYLE_TEXT_PLACEHOLDER:lazy-component"; },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_1;
+            }()));
+        }
+    };
+});

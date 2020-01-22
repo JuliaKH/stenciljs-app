@@ -12,7 +12,9 @@ import {
 } from './models/todoItem';
 
 export namespace Components {
-  interface MyApp {}
+  interface MyApp {
+    'imgSrc': string;
+  }
   interface TodoApp {}
   interface TodoList {
     'todoItems': TodoItem[];
@@ -57,7 +59,9 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface MyApp {}
+  interface MyApp {
+    'imgSrc'?: string;
+  }
   interface TodoApp {}
   interface TodoList {
     'todoItems'?: TodoItem[];

@@ -1,8 +1,8 @@
 {
   "entries": [
-    "components\\todo-list\\todo-list.js",
     "components\\my-app\\my-app.js",
     "components\\todo-app\\todo-app.js",
+    "components\\todo-list\\todo-list.js",
     "components\\todo-list-form\\todoListForm.js"
   ],
   "compiler": {

@@ -1,0 +1,55 @@
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+System.register(['./core-d14a6cdc.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, h;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                h = module.h;
+            }],
+        execute: function () {
+            var TodoItem = /** @class */ (function () {
+                function TodoItem(text) {
+                    this.text = text;
+                }
+                return TodoItem;
+            }());
+            var TodoApp = exports('todo_app', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                    this.items = [];
+                }
+                class_1.prototype.render = function () {
+                    var _this = this;
+                    var handleOnChange = function (e) { return _this.handleOnChange(e); };
+                    var handleSubmit = function (e) { return _this.handleSubmit(e); };
+                    return (h("div", { class: "todo-app" }, h("h1", null, "TODO LIST"), h("todo-list", { todoItems: this.items }), h("todo-list-form", { onSubmit: handleSubmit, onInputChange: handleOnChange, todoItemsLength: this.items.length })));
+                };
+                class_1.prototype.handleSubmit = function (e) {
+                    e.preventDefault();
+                    if (!this.text.length) {
+                        return;
+                    }
+                    var newItem = new TodoItem(this.text);
+                    this.text = '';
+                    this.items = __spreadArrays(this.items, [newItem]);
+                };
+                class_1.prototype.handleOnChange = function (e) {
+                    this.text = e.detail;
+                };
+                Object.defineProperty(class_1, "style", {
+                    get: function () { return "STYLE_TEXT_PLACEHOLDER:todo-app"; },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_1;
+            }()));
+        }
+    };
+});

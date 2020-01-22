@@ -1,0 +1,11 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+export const MyApp = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+    }
+    render() {
+        return (h("div", null, h("header", null, h("h1", { class: "heading" }, "Todo List with Stencil")), h("main", null, h("todo-app", null)), h("lazy-component", { "img-src": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" }), h("lazy-component", { "img-src": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" }), h("lazy-component", { "img-src": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" }), h("lazy-component", { "img-src": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" }), h("lazy-componentp", { "img-src": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" }), h("lazy-component", { "img-src": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" })));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:my-app"; }
+};

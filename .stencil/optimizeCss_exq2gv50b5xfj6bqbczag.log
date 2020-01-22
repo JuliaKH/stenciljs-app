@@ -1,0 +1,9 @@
+.todo-list-form {
+  margin: 10px;
+}
+button:disabled {
+  color: red;
+}
+button:hover {
+  color: blue;
+}

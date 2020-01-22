@@ -1,0 +1,17 @@
+System.register(['./core-899652aa.system.js'], function () {
+    'use strict';
+    var patchBrowser, globals, bootstrapLazy;
+    return {
+        setters: [function (module) {
+                patchBrowser = module.p;
+                globals = module.g;
+                bootstrapLazy = module.b;
+            }],
+        execute: function () {
+            patchBrowser().then(function (options) {
+                globals();
+                return bootstrapLazy([["todo-list.system", [[0, "todo-list", { "todoItems": [16] }]]], ["todo-list-form.system", [[0, "todo-list-form", { "todoItemsLength": [2, "todo-items-length"], "value": [32] }]]], ["todo-app.system", [[0, "todo-app", { "items": [32], "text": [32] }]]], ["my-app.system", [[0, "my-app"]]]], options);
+            });
+        }
+    };
+});

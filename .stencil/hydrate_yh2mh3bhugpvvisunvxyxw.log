@@ -1,0 +1,35 @@
+import { registerInstance as __stencil_registerInstance, createEvent as __stencil_createEvent } from "@stencil/core";
+import { h } from "@stencil/core";
+export class TodoListForm {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+        this.value = '';
+        this.inputChange = __stencil_createEvent(this, "inputChange", 7);
+        this.submit = __stencil_createEvent(this, "submit", 7);
+    }
+    handleOnChange(e) {
+        this.value = e.target.value;
+        this.inputChange.emit(this.value);
+    }
+    handleOnSubmit(e) {
+        e.preventDefault();
+        this.submit.emit(this.value);
+        this.value = '';
+    }
+    render() {
+        const handleOnChange = (e) => this.handleOnChange(e);
+        const handleOnSubmit = (e) => this.handleOnSubmit(e);
+        return (h("form", { class: "todo-list-form", onSubmit: handleOnSubmit }, h("input", { type: "text", onInput: handleOnChange, value: this.value }), h("button", null, "Add #", this.todoItemsLength + 1)));
+    }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "todo-list-form",
+        "$members$": {
+            "todoItemsLength": [2, "todo-items-length"],
+            "value": [32]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}

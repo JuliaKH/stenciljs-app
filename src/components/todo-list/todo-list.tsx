@@ -3,7 +3,10 @@ import { TodoItem } from "../../models/todoItem";
 
 
 @Component({
-  tag: 'todo-list'
+  tag: 'todo-list',
+  styles:`
+  li {list-style-type: none; color: white}
+  `
 })
 export class TodoList {
   @Prop() todoItems: TodoItem[];

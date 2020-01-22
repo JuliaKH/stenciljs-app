@@ -1,11 +1,16 @@
 import { Config } from '@stencil/core';
 import analyze from 'rollup-plugin-analyzer'
-// https://stenciljs.com/docs/config
+import { less } from '@stencil/less';
 
 export const config: Config = {
-  namespace: 'myApp',
+  // namespace: 'myApp',
   outputTargets: [{
-    type: 'dist'
+    type: 'www',
+    baseUrl:'https://stenciljs.com/'
   }],
-  plugins: [analyze({summaryOnly:true})]
+  globalStyle: 'src/global/variables.css',
+  plugins: [
+      analyze({summaryOnly:true}),
+    less()
+  ]
 };

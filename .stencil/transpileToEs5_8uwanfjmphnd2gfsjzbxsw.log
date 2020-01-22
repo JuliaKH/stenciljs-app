@@ -1,0 +1,42 @@
+System.register(['./core-53b72ae8.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, createEvent, h;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                createEvent = module.d;
+                h = module.h;
+            }],
+        execute: function () {
+            var TodoListForm = exports('todo_list_form', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                    this.value = '';
+                    this.inputChange = createEvent(this, "inputChange", 7);
+                    this.submit = createEvent(this, "submit", 7);
+                }
+                class_1.prototype.handleOnChange = function (e) {
+                    this.value = e.target.value;
+                    this.inputChange.emit(this.value);
+                };
+                class_1.prototype.handleOnSubmit = function (e) {
+                    e.preventDefault();
+                    this.submit.emit(this.value);
+                    this.value = '';
+                };
+                class_1.prototype.render = function () {
+                    var _this = this;
+                    var handleOnChange = function (e) { return _this.handleOnChange(e); };
+                    var handleOnSubmit = function (e) { return _this.handleOnSubmit(e); };
+                    return (h("form", { class: "todo-list-form", onSubmit: handleOnSubmit }, h("input", { type: "text", onInput: handleOnChange, value: this.value }), h("button", { disabled: true }, "Add #", this.todoItemsLength + 1)));
+                };
+                Object.defineProperty(class_1, "style", {
+                    get: function () { return "STYLE_TEXT_PLACEHOLDER:todo-list-form"; },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_1;
+            }()));
+        }
+    };
+});

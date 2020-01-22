@@ -1,0 +1,21 @@
+System.register(['./core-53b72ae8.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, h;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                h = module.h;
+            }],
+        execute: function () {
+            var TodoList = exports('todo_list', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                }
+                class_1.prototype.render = function () {
+                    return (h("ul", { class: "todo-list" }, this.todoItems.map(function (item) { return (h("li", null, item.text)); })));
+                };
+                return class_1;
+            }()));
+        }
+    };
+});

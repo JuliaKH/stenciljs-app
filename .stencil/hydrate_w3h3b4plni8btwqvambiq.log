@@ -1,0 +1,20 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+export class TodoList {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+    }
+    render() {
+        return (h("ul", { class: "todo-list" }, this.todoItems.map((item) => (h("li", null, item.text)))));
+    }
+    static get cmpMeta() { return {
+        "$flags$": 0,
+        "$tagName$": "todo-list",
+        "$members$": {
+            "todoItems": [16]
+        },
+        "$listeners$": undefined,
+        "$lazyBundleIds$": "-",
+        "$attrsToReflect$": []
+    }; }
+}

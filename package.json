@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "stencil build",
-    "start": "stencil build --dev --watch --serve",
+    "start": "stencil build --dev --watch --serve ",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watch",
     "generate": "stencil generate"
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@stencil/core": "^1.8.4",
+    "@stencil/less": "^1.0.0",
     "rollup-plugin-analyzer": "^3.2.2"
   }
 }
